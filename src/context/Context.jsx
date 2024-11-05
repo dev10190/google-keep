@@ -36,11 +36,11 @@ const NotesProvider = ({ children }) => {
   ]);
 
   useEffect(() => {
-    toast(showtoast, { position: "top-center" });
+    toast(showtoast, { position: "top-center", theme: "dark" });
   }, [showtoast]);
 
   useEffect(() => {
-    toast.error(errortoast, { position: "top-center" });
+    toast.error(errortoast, { position: "top-center", theme: "dark"  });
   }, [errortoast]);
 
   const userLoggedIn = user.filter((user) => user.email === userSession);
@@ -86,6 +86,7 @@ const NotesProvider = ({ children }) => {
         { title, textarea, id, colorCard, email, type },
         ...prev,
       ]);
+      setShowToast("note added")
     }else if(title === "" && textarea === ""){
       setErrorToast("please fill title and note field")
     }
@@ -167,7 +168,7 @@ const NotesProvider = ({ children }) => {
         premanentDelete,
         listView,
         setListView,
-        selectSidebar, setSelectSidebar, archiveNote,
+        selectSidebar, setSelectSidebar, archiveNote, setShowToast,
       }}
     >
       {children}

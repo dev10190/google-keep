@@ -6,12 +6,8 @@ import NotesProvider, { useNote } from "./context/Context";
 const App = () => {
   return (
     <NotesProvider>
-      <Container>
-        {/* <Navbar /> */}
-        {/* <div className="flex "> */}
-        {/* <Sidebar /> */}
+      <Container> 
         <Outlet />
-        {/* </div> */}
       </Container>
     </NotesProvider>
   );
